@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import SWRegistration from "./SWRegistration";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Consejos Terribles",
   description: "Aplicación de consejos absurdos y moralmente cuestionables",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -52,6 +54,7 @@ export default function RootLayout({
         <main className="flex-1 flex items-center justify-center p-6">
           {children}
         </main>
+        <SWRegistration/>
       </body>
     </html>
   );
